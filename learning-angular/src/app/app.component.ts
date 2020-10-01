@@ -29,18 +29,20 @@ let somethingRandom: any;
 somethingRandom = 1000;
 
 interface Content {
-  id: number;
-  body: string;
+  readonly id: number;
+  body?: string;
   type: string;
   imageUrl: string;
 }
 
 const newsArticle: Content = {
   id: 0,
-  body: 'This just in! Things and stuff!',
   type: 'news',
   imageUrl: 'https://my.stclaircollege.ca/sites/student/SiteAssets/Logos/myStclairLogo.png'
 };
+
+newsArticle.body = 'This is the body';
+
 
 function displayTheBody(content: Content): void{
   console.log(content.body);
@@ -48,3 +50,22 @@ function displayTheBody(content: Content): void{
 
 displayTheBody(newsArticle);
 
+
+class ContentList {
+  static contentCount = 0;
+  private _items: Content[];
+  constructor(item: Content) {
+    this._items[0] = item;
+    this.increaseCount();
+  }
+  get items(): Content[]{
+    return this._items;
+  }
+  increaseCount() {
+    return ++ContentList.contentCount;
+  }
+}
+
+let newsListOfContent: ContentList;
+newsListOfContent = new ContentList(newsArticle);
+console.log(newsListOfContent.items[0]);
