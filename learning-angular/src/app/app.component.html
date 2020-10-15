@@ -1,2 +1,23 @@
-<app-content-card *ngFor="let item of gamesList; index as i; first as isFirst" [game]="item"
-                  class="content-card-{{i}}" [class.is-first]="isFirst"></app-content-card>
+<app-content-card *ngFor="let item of (gamesList | contentTagged); index as i; first as isFirst" [game]="item"
+                  class="content-card-{{i}}" [class.is-first]="isFirst">
+</app-content-card>
+
+<br>
+
+<h2>Using a template reference var</h2>
+<input #cardTitle><button (click)="submitInput()">Click this button for refreshing</button>
+<br>
+<h4> The value is: {{cardTitle.value}}</h4>
+
+
+<h2>Using 2 way binding</h2>
+<input [(ngModel)]="twoWayBindingTitle">
+<br>
+<h4>The value is: {{twoWayBindingTitle}}</h4>
+
+<h2>Pipes</h2>
+{{awesomesauce | lowercase}}
+<br>
+{{todaysDate | date:'medium' | uppercase}}
+<br>
+The type of {{gamesList[0].title}} is {{gamesList[0] | defaultType: 'Super FPS'}}

@@ -2,5 +2,5 @@
   <img class="main-image" src="{{game.imageUrl}}">
   <div class="title">{{game.title}}</div>
   <div class="body" *ngIf="game.body">{{game.body}}</div>
-  <div class="genre">{{game.genre}}</div>
+  <div class="genre">{{game | defaultType}}</div>
 </div>

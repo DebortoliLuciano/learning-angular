@@ -7,9 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  awesomesauce = '<h1>This is a header!</h1>';
+  awesomesauce = 'This is a header!';
+  todaysDate: number;
   gamesList: Content[];
+  twoWayBindingTitle: string;
   constructor() {
+    this.todaysDate = Date.now();
     this.gamesList = [{
       id: 0,
       title: 'Modern Warfare 2',
@@ -42,12 +45,18 @@ export class AppComponent {
       imageUrl: 'https://angular.io/assets/images/logos/angular/angular.png'
     }];
   }
+  getContentItemTitle(index: number): string{
+    return this.gamesList[index].title;
+  }
+  submitInput(): void{
+    console.log('Testing submitting my input');
+  }
 }
 
 export interface Content {
   readonly id: number;
   title: string;
   body?: string;
-  genre: string;
+  genre?: string;
   imageUrl: string;
 }
