@@ -59,6 +59,11 @@ export class ContentListComponent implements OnInit {
   }
 
   submitInput(title: string): void{
+    if (this.contentList.filter(t => t.title === title).length > 0){
+      console.log('There is an object with this title');
+    }else{
+      console.log('There are no objects with this title');
+    }
 
   }
 }
