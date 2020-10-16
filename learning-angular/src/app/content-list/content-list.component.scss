@@ -2,7 +2,20 @@ li{
   width: 400px;
   display: block;
   margin: 24px auto;
-  border: 3px dotted black;
+}
+
+.Bad-memes{
+  width: 400px;
+  display: block;
+  margin: 24px auto;
+  border: 3px dotted green;
+}
+
+.Good-Memes{
+  width: 400px;
+  display: block;
+  margin: 24px auto;
+  border: 3px dotted red;
 }
 
 ul{
@@ -23,3 +36,5 @@ ul{
 .is-last{
   border: 2px solid black;
 }
+
+

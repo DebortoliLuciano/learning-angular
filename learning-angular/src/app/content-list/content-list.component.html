@@ -1,5 +1,19 @@
+<input #contentTitle value="Default Value">
+<button (click)="submitInput(contentTitle.value)">Click this button to check if it exists</button>
 <ul>
-  <li *ngFor="let content of contentList; index as i; last as isLast" class="content-card-{{i}}" [class.is-last]="isLast">
+  <li><h2>Good Memes</h2></li>
+  <li *ngFor="let content of contentList | searchType: 'Good-Meme'; index as i; last as isLast" class="Good-Memes" [class.is-last]="isLast">
+    <div class="content-{{content.id}}">
+      <img class="trebuchet-image" *ngIf="content.imgUrl" src="{{content.imgUrl}}" (click)="onClickMe(content.id)" >
+      <h1 class="title">{{content.title}}</h1>
+      <div class="author">{{content.author}}</div>
+      <div class="body">{{content.body}}</div>
+      <div class="type" *ngIf="content.type">{{content.type}}</div>
+      <div class="tags" *ngIf="content.tags">{{content.tags[0]}}</div>
+    </div>
+  </li>
+  <li><h2>Bad Memes</h2></li>
+  <li *ngFor="let content of contentList | searchType: 'Bad-Meme'; index as i; last as isLast" class="Bad-memes" [class.is-last]="isLast">
     <div class="content-{{content.id}}">
       <img class="trebuchet-image" *ngIf="content.imgUrl" src="{{content.imgUrl}}" (click)="onClickMe(content.id)" >
       <h1 class="title">{{content.title}}</h1>
