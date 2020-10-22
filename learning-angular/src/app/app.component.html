@@ -1,4 +1,7 @@
-<app-content-card *ngFor="let item of (gamesList | contentTagged); index as i; first as isFirst" [game]="item"
+<!--<app-content-card *ngFor="let item of (gamesList | contentTagged); index as i; first as isFirst" [game]="item"-->
+<!--                  class="content-card-{{i}}" [class.is-first]="isFirst">-->
+<!--</app-content-card>-->
+<app-content-card *ngFor="let item of gamesList; index as i; first as isFirst" [game]="item"
                   class="content-card-{{i}}" [class.is-first]="isFirst">
 </app-content-card>
 

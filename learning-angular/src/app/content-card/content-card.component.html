@@ -1,6 +1,11 @@
 <div class="content-{{game.id}}">
   <img class="main-image" src="{{game.imageUrl}}">
-  <div class="title">{{game.title}}</div>
-  <div class="body" *ngIf="game.body">{{game.body}}</div>
-  <div class="genre">{{game | defaultType}}</div>
+  <div appHighlight class="title">{{game.title}}</div>
+  <div appHighlight [colour]="'blue'" class="body" *ngIf="game.body">{{game.body}}</div>
+  <div [ngSwitch]="game.genre">
+    <span *ngSwitchCase="'FPS'"><strong>Genre:</strong> Shooter</span>
+    <span *ngSwitchCase="'Racer'"><strong>Genre:</strong> Racing Game</span>
+    <span *ngSwitchDefault><strong [style.color]="defaultColor">Genre:</strong> {{game.genre}}</span>
+  </div>
+<!--  <div class="genre">{{game | defaultType}}</div>-->
 </div>

@@ -9,7 +9,10 @@ import {Content} from '../app.component';
 export class ContentCardComponent implements OnInit {
 
   @Input() game: Content;
-  constructor() { }
+  defaultColor: string;
+  constructor() {
+    this.defaultColor = 'Blue';
+  }
 
   ngOnInit(): void {
 
