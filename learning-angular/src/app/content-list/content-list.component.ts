@@ -18,7 +18,7 @@ export class ContentListComponent implements OnInit {
       type: 'Good-Meme',
       title: 'Alex Trebuchet',
       body: 'The Great Canadian War Machine',
-      tags: ['Tag1']
+      tags: ['Tag1', 'Tag2']
     }, {
       id: 1,
       author: 'Luciano DeBortoli',
@@ -26,7 +26,7 @@ export class ContentListComponent implements OnInit {
       type: 'Bad-Meme',
       title: 'Best War Machine',
       body: 'You cant compete',
-      tags: ['Tag2']
+      tags: ['Tag2', 'Tag3', 'Tag1']
     }, {
       id: 2,
       author: 'Luciano DeBortoli',
@@ -34,7 +34,7 @@ export class ContentListComponent implements OnInit {
       type: 'Good-Meme',
       title: 'Classy Trebuchet',
       body: 'Its the first way',
-      tags: ['Tag1']
+      tags: ['Tag1', 'Tag4', 'Tag2']
     }, {
       id: 3,
       author: 'Luciano DeBortoli',
@@ -42,15 +42,14 @@ export class ContentListComponent implements OnInit {
       type: 'Bad-Meme',
       title: 'Lovely',
       body: 'Just Lovely',
-      tags: ['Tag3']
+      tags: ['Tag3', 'Tag1']
     }, {
       id: 4,
       author: 'Luciano DeBortoli',
-      imgUrl: 'https://i.kym-cdn.com/photos/images/newsfeed/001/276/082/b2c.png',
       type: 'Bad-Meme',
       title: 'Best Font',
       body: 'Not entirelly sure what I am supposed to be putting into these objects',
-      tags: ['Tag1']
+      tags: ['Tag1', 'DefaultImageTag']
     }];
   }
 

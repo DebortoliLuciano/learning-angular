@@ -4,23 +4,29 @@
   <li><h2>Good Memes</h2></li>
   <li *ngFor="let content of contentList | searchType: 'Good-Meme'; index as i; last as isLast" class="Good-Memes" [class.is-last]="isLast">
     <div class="content-{{content.id}}">
-      <img class="trebuchet-image" *ngIf="content.imgUrl" src="{{content.imgUrl}}" (click)="onClickMe(content.id)" >
-      <h1 class="title">{{content.title}}</h1>
+      <img class="trebuchet-image" *ngIf="content.imgUrl; else elseBlock" src="{{content.imgUrl}}" (click)="onClickMe(content.id)" >
+      <ng-template #elseBlock><img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mang2.png"></ng-template>
+      <h1 appHoverStyle [type]="'title'" class="title">{{content.title}}</h1>
       <div class="author">{{content.author}}</div>
       <div class="body">{{content.body}}</div>
       <div class="type" *ngIf="content.type">{{content.type}}</div>
-      <div class="tags" *ngIf="content.tags">{{content.tags[0]}}</div>
+      <div *ngFor="let tag of content.tags; index as i;" class="tag-{{i}}">
+        <div appHoverStyle [type]="'tag'" *ngIf="content.tags">{{tag}}</div>
+      </div>
     </div>
   </li>
   <li><h2>Bad Memes</h2></li>
   <li *ngFor="let content of contentList | searchType: 'Bad-Meme'; index as i; last as isLast" class="Bad-memes" [class.is-last]="isLast">
     <div class="content-{{content.id}}">
-      <img class="trebuchet-image" *ngIf="content.imgUrl" src="{{content.imgUrl}}" (click)="onClickMe(content.id)" >
-      <h1 class="title">{{content.title}}</h1>
+      <img class="trebuchet-image" *ngIf="content.imgUrl; else elseBlock" src="{{content.imgUrl}}" (click)="onClickMe(content.id)" >
+      <ng-template #elseBlock><img class="default-image" src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mang2.png"></ng-template>
+      <h1 appHoverStyle [type]="'title'" class="title">{{content.title}}</h1>
       <div class="author">{{content.author}}</div>
       <div class="body">{{content.body}}</div>
       <div class="type" *ngIf="content.type">{{content.type}}</div>
-      <div class="tags" *ngIf="content.tags">{{content.tags[0]}}</div>
+      <div *ngFor="let tag of content.tags; index as i;" class="tag-{{i}}">
+        <div appHoverStyle [type]="'tag'" *ngIf="content.tags">{{tag}}</div>
+      </div>
     </div>
   </li>
 </ul>
