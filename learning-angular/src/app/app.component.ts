@@ -44,11 +44,31 @@ export class AppComponent {
       body: 'Time to find those weird checkered cubes in sunshine',
       imageUrl: 'https://angular.io/assets/images/logos/angular/angular.png'
     }];
+
+    /*console.log('First console log');
+    setTimeout(function() {
+      console.log('Second console log');
+    }, 0);
+    Promise.resolve().then(function() {
+      console.log('Third console log');
+    });*/
+    console.log('Fourth console log');
+    const ourPromise = new Promise((success, fail) => {
+      const testPass = true;
+      if (testPass){
+        success('It worked!');
+      }else{
+        fail('it failed');
+      }
+    });
+    ourPromise.then(successResult => console.log(successResult))
+              .catch(failResult => console.log(failResult));
+
   }
   getContentItemTitle(index: number): string{
     return this.gamesList[index].title;
   }
-  submitInput(): void{
+  submitInput(): void {
     console.log('Testing submitting my input');
   }
 }
