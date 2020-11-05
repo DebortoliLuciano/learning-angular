@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import { DefaultTypePipe } from './default-type.pipe';
 import { ContentTaggedPipe } from './content-tagged.pipe';
 import { HighlightDirective } from './highlight.directive';
+import { AddContentComponent } from './add-content/add-content.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HighlightDirective } from './highlight.directive';
     ContentCardComponent,
     DefaultTypePipe,
     ContentTaggedPipe,
-    HighlightDirective
+    HighlightDirective,
+    AddContentComponent
   ],
   imports: [
     BrowserModule,
