@@ -65,4 +65,9 @@ export class ContentListComponent implements OnInit {
     }
 
   }
+  addMemeToList(newMemeFromChild: Content): void{
+    this.contentList.push(newMemeFromChild);
+    this.contentList = Object.assign([], this.contentList);
+    console.log(this.contentList);
+  }
 }
