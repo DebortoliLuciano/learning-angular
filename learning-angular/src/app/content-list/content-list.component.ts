@@ -12,7 +12,21 @@ export class ContentListComponent implements OnInit {
   constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.contentService.getContentObs().subscribe(memelist => this.contentList = memelist);
+    this.contentList = [];
+    this.getMemesList();
+  }
+  getMemesList(): void{
+    this.contentService.getContentObs().subscribe(m1 => {
+      this.contentList = m1;
+    });
+  }
+  addMemeToList(newMemeFromChild: Content): void{
+    this.contentList.push(newMemeFromChild);
+    this.contentList = Object.assign([], this.contentList);
+  }
+  updateList(message: string): void{
+    console.log(message);
+    this.getMemesList();
   }
 
   onClickMe(id: number): void {

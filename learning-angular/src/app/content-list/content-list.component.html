@@ -1,3 +1,8 @@
+
+
+
+<app-create-component (newMemeEvent)="addMemeToList($event)" (updateGameEvent)="updateList($event)"></app-create-component>
+
 <input #contentTitle value="Default Value">
 <button (click)="submitInput(contentTitle.value)">Click this button to check if it exists</button>
 <ul>
