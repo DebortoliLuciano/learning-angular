@@ -2,9 +2,10 @@
 
 
 <app-create-component (newMemeEvent)="addMemeToList($event)" (updateGameEvent)="updateList($event)"></app-create-component>
-
-<input #contentTitle value="Default Value">
-<button (click)="submitInput(contentTitle.value)">Click this button to check if it exists</button>
+<mat-form-field>
+<input matInput #contentTitle value="Default Value">
+</mat-form-field>
+<button mat-flat-button color="primary" (click)="submitInput(contentTitle.value)">Click this button to check if it exists</button>
 <ul>
   <li><h2>Good Memes</h2></li>
   <li *ngFor="let content of contentList | searchType: 'Good-Meme'; index as i; last as isLast" class="Good-Memes" [class.is-last]="isLast">

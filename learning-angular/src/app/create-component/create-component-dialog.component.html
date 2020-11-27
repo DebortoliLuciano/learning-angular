@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Add Trebuchet</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>ID</mat-label>
+    <input matInput [(ngModel)]="newMeme.id"/><br />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="newMeme.title"/><br />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Body</mat-label>
+    <input matInput [(ngModel)]="newMeme.body"/><br />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Author</mat-label>
+    <input matInput [(ngModel)]="newMeme.author"/><br />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>ImageUrl</mat-label>
+    <input matInput [(ngModel)]="newMeme.imageURL"/><br />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button color="accent" (click)="onNoClick()">Cancel</button>
+  <button mat-button color="accent" [mat-dialog-close]="newMeme" cdkFocusInitial>Add Trebuchet</button>
+</div>
+
