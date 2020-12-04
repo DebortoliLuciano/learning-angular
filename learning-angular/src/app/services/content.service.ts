@@ -26,4 +26,7 @@ export class ContentService {
     this.messageService.add('Successfully updated');
     return this.http.put<Content>('api/content', content, this.httpOptions);
   }
+  getContent(id: number): Observable<Content>{
+    return this.http.get<Content>('api/content/' + id);
+  }
 }
